@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffebf3;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .envelope {
+            position: relative;
+            width: 90%;
+            max-width: 300px;
+            height: 200px;
+            background: #ff4d6d;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .letter {
+            position: absolute;
+            width: 90%;
+            max-width: 260px;
+            height: auto;
+            background: white;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.5s, opacity 0.5s;
+            opacity: 0;
+            font-size: 16px;
+        }
+        .envelope.open .letter {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+        @media (max-width: 480px) {
+            .letter {
+                font-size: 14px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope" onclick="openLetter()">
+        Open
+        <div class="letter">If you're reading this, means you have accepted my gift. This gift is an expression on how much I appreciate your existence. Sorry if ang torpe ng dating pero hopefully ang gift na ito ay mapasaya ka. <br>-Cra❤️</div>
+    </div>
+    <script>
+        function openLetter() {
+            document.querySelector('.envelope').classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
